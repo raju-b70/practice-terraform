@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   practice-tf-apply:
-    group: Terraform
+    group: terraform
     materials:
       git-da613e5:
         git: https://github.com/raju-b70/practice-terraform.git
@@ -16,7 +16,8 @@ pipelines:
           approval:
             type: manual
           jobs:
-            terraform-apply:
+            ansible-playbook:
               tasks:
-                - exec: {command: terraform, arguments: [ "init", "-backend-config=env-dev/state.tfvars" ], run_if: passed}
-                - exec: {command: terraform, arguments: [ "apply", "-var-file=env-dev/main.tfvars", "-auto-approve" ], run_if: passed}
+                - exec: {command:terraform, arguments: ["init", "-backend-config=env-dev/state.tfvars" ], run_if: passed
+                - exec: {command:terraform, arguments: ["apply", "-var-file=env-dev/main.tfvars", "-auto-approve" ], run_if: passed
+
