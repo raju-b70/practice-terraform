@@ -16,7 +16,7 @@ pipelines:
           approval:
             type: manual
           jobs:
-            ansible-playbook:
+            terraform-apply:
               tasks:
                 - exec: {command:terraform, arguments: ["init", "-backend-config=env-dev/state.tfvars" ], run_if: passed
                 - exec: {command:terraform, arguments: ["apply", "-var-file=env-dev/main.tfvars", "-auto-approve" ], run_if: passed
