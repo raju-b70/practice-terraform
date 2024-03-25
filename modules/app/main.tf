@@ -7,7 +7,7 @@ resource "aws_instance" "instance" {
   }
 }
 resource "null_resource" "ansible" {
-  provisioner "remote_exec" {
+  provisioner "remote-exec" {
 
     connection {
       type     = "ssh"
