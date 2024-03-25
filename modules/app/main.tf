@@ -23,10 +23,10 @@ resource "null_resource" "ansible" {
   }
 }
 
-  resource "aws_route53_record" "selected" {
-    name    = "$(var.component)-$(var.env)"
-    type    = "a"
-    zone_id = var.zone_id
-    records = [aws_instance.instance.private_ip]
-    ttl     = 30
-  }
+resource "aws_route53_record" "record" {
+  name    = "$(var.component)-$(var.env)"
+  type    = "a"
+  zone_id = var.zone_id
+  records = [aws_instance.instance.private_ip]
+  ttl     = 30
+}
