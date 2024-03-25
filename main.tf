@@ -7,10 +7,9 @@ module "frontend" {
   env = var.env
   zone_id = var.zone_id
 }
-
-#module "frontend" {
- # source = "./modules/app"
+#module "backend" {
+ # source = ""
 #}
-#module "frontend" {
- # source = "./modules/app"
+#module "mysql" {
+#  source = ""
 #}

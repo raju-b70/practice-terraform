@@ -1,5 +1,5 @@
 variable "instance_type" {}
-variable "tags" {}
+variable "component" {}
 variable "ssh_user" {}
 variable "ssh_pass" {}
 variable "env" {}
